@@ -10,10 +10,6 @@ interface RoundedButtonProp {
 }
 
 export default function RoundedButton({ children, bg_color, href }: RoundedButtonProp) {
-  useEffect(() => {
-    document.documentElement.style.setProperty('--rounded-btn-bg-bg_color', bg_color);
-  }, [bg_color]);
-
   return (
     <Link href={href} className="relative inline-block text-center no-underline border border-gray-600 py-3 px-7 rounded-full overflow-hidden group">
       <span className="relative z-10 text-black transition-colors duration-200 group-hover:text-black">
