@@ -1,28 +1,25 @@
-'use client'
+'use client';
 
 import Link from "next/link";
 import { ReactNode, useEffect } from "react";
-import './RoundedButton.css'
 
-interface RoundedButtonProp{
+interface RoundedButtonProp {
   children?: ReactNode;
-  color: string;
+  bg_color: string;
   href: string;
 }
 
-export default function RoundedButton({children, color, href}: RoundedButtonProp) {
-  useEffect(()=>{
-    document.documentElement.style.setProperty('--rounded-btn-bg-color', color);
-  }, [])
-  
+export default function RoundedButton({ children, bg_color, href }: RoundedButtonProp) {
+  useEffect(() => {
+    document.documentElement.style.setProperty('--rounded-btn-bg-bg_color', bg_color);
+  }, [bg_color]);
+
   return (
-    <>
-      <Link 
-        href={href}
-        className="rounded-btn rounded-btn-bgleft rounded-full"
-      >
-        <span>{children}</span>
-      </Link>
-    </>
+    <Link href={href} className="relative inline-block text-center no-underline border border-gray-600 py-3 px-7 rounded-full overflow-hidden group">
+      <span className="relative z-10 text-black transition-colors duration-200 group-hover:text-black">
+        {children}
+      </span>
+      <div className={bg_color + " absolute inset-0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-right group-hover:origin-left"}></div>
+    </Link>
   );
 }

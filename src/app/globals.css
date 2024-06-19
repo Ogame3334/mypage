@@ -5,6 +5,16 @@
 :root {
 }
 
+html{
+  @apply w-full h-full
+}
+body{
+  @apply w-full h-full
+}
+main{
+  @apply w-full h-full
+}
+
 .top-container {
     height: 100%;
 }

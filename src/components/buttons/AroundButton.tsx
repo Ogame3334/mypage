@@ -21,9 +21,6 @@ export default function AroundButton({ children, className, href, onClick }: Aro
           <span>{children}</span>
         </Link>
       }
-      {/* <a className={(className || '') + " around-btn around-btn-bordercircle text-center"} >
-        <span>{children}</span>
-      </a> */}
     </>
   );
 }
