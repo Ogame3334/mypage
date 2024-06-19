@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  mypage:
+    image: node:18
+    command: /root/product/execute.sh
+    container_name: mypage
+    volumes:
+      - .:/root/product
+    ports:
+    - "49152:3000"
