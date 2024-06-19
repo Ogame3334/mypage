@@ -1,0 +1,70 @@
+.cp_iptxt {
+  position: relative;
+  width: 80%;
+  margin: 40px 3%;
+}
+.cp_iptxt input[type='text'],
+.cp_iptxt textarea {
+  font: 15px/24px sans-serif;
+  box-sizing: border-box;
+  width: 100%;
+  letter-spacing: 1px;
+  padding: 4px 0;
+}
+.cp_iptxt input[type='text']:focus,
+.cp_iptxt textarea:focus {
+  outline: none;
+}
+.ef {
+  padding: 4px 0;
+  border: 0;
+  border-bottom: 1px solid #1b2538;
+  background-color: transparent;
+  resize: none; /* Prevents resizing for textarea */
+}
+.ef ~ .focus_line {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  transition: 0.4s;
+  background-color: #65A30D;
+}
+.ef:focus ~ .focus_line,
+.cp_iptxt.has-content .ef:focus ~ .focus_line {
+  left: 0;
+  width: 100%;
+  transition: 0.4s;
+}
+.ef ~ label {
+  position: absolute;
+  z-index: -1;
+  top: 4px;
+  left: 0;
+  width: 100%;
+  transition: 0.3s;
+  letter-spacing: 0.5px;
+  color: #aaaaaa;
+}
+.ef:focus ~ label,
+.cp_iptxt.has-content .ef ~ label,
+.cp_iptxt.ef ~ label {
+  font-size: 12px;
+  top: -16px;
+  transition: 0.3s;
+  color: #65A30D;
+}
+
+/* テキストエリアに特有のスタイル */
+.cp_iptxt textarea.ef {
+  padding: 4px 0; /* 他の入力要素と一致させるためのパディング */
+  line-height: 24px; /* 行間の調整 */
+  max-height: 200px; /* 最大高さを設定 */
+  overflow-y: hidden; /* 最初はスクロールバーを非表示に */
+}
+
+/* テキストエリアのfocus_line位置を調整 */
+.cp_iptxt textarea.ef ~ .focus_line {
+  bottom: 6px; /* テキストエリアの場合、位置を調整 */
+}

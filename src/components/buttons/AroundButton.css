@@ -1,0 +1,96 @@
+@charset "utf-8";
+
+/*--- 線から塗り（共通設定） ---*/
+
+.around-btn{
+    /*線の基点とするためrelativeを指定*/
+    position: relative;
+    /*ボタンの形状*/
+    display: inline-block;
+    color: #333;
+    
+    padding: 10px 20px;
+    text-decoration: none;
+    outline: none;
+    /*アニメーションの指定*/
+    transition: all .3s;
+    transition-delay: .7s;/*0.7秒遅れてアニメーション*/
+}
+
+/*hoverした際の、ボタンの背景とテキスト色の変更*/
+.around-btn:hover{
+  background:#333;
+  color: #fff;
+}
+
+/*線の設定*/
+.around-btn span{
+    display: block;
+}
+
+/*横線の設定*/
+.around-btn::before,
+.around-btn::after{
+    content:"";
+    /*絶対配置で線の位置を決める*/   
+    position: absolute;
+    /*線の形状*/   
+    width: 0;
+    height: 1px;
+    background: #333;
+    /*アニメーションの指定*/
+    transition: all 0.1s linear;
+}
+
+/*縦線の設定*/
+.around-btn span::before,
+.around-btn span::after{
+    content:"";
+    /*絶対配置で線の位置を決める*/   
+    position: absolute;
+    /*線の形状*/
+    width:1px;
+    height:0;
+    background: #333;
+    /*アニメーションの指定*/
+    transition: all 0.1s linear;
+}
+
+/*hoverした際、線が縦横100%伸びる*/
+.around-btn:hover::before,
+.around-btn:hover::after{
+    width: 100%;
+}
+.around-btn:hover span::before,
+.around-btn:hover span::after{
+    height: 100%;
+}
+
+/*== 左下⇒右下⇒右上⇒左上⇒左下に枠線が伸びて塗りに */
+
+/*左下から右下へ伸びる横線*/
+.around-btn-bordercircle::after{
+    left: 0;
+    bottom: 0;
+}
+
+/*右下から上へ伸びる縦線*/
+.around-btn-bordercircle span::after{
+    right: 0;
+    bottom: 0;
+    transition-delay: 0.1s;
+}
+
+/*右上から左上へ伸びる横線*/
+.around-btn-bordercircle::before{
+    right: 0;
+    top: 0;
+    transition-delay: 0.2s;
+}
+
+/*左上から左下へ伸びる横線*/
+.around-btn-bordercircle span::before{
+    left: 0;
+    top: 0;
+    transition-delay: 0.3s;
+}

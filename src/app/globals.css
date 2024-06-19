@@ -3,31 +3,31 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.top-container {
+    height: 100%;
+}
+.top-main-container {
+    @apply bg-[url(/bg-cpp-code.png)] bg-cover
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
+.border-color {
+    border-color: rgb(63 98 18 / var(--tw-border-opacity));
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.btn{
+    /*アニメーションの起点とするためrelativeを指定*/
+    position: relative;
+  overflow: hidden;
+    /*ボタンの形状*/
+  text-decoration: none;
+  display: inline-block;
+    border: 1px solid #555;/* ボーダーの色と太さ */
+    padding: 10px 30px;
+    text-align: center;
+    outline: none;
+    /*アニメーションの指定*/   
+    transition: ease .2s;
 }
