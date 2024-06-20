@@ -16,7 +16,7 @@ function HeaderButton({ href, children }: { href: string, children: React.ReactN
 }
 
 export default function CustomHeader() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
@@ -49,7 +49,7 @@ export default function CustomHeader() {
           </div>
         </div>
       </div>
-      <div className={`fixed top-16 ${isOpen ? "left-0" : "left-full"} w-full h-full bg-lime-50 z-50 transition-all duration-500`}>
+      <div className={`fixed md:hidden top-16 ${isOpen ? "left-0" : "left-full"} w-full h-full bg-lime-50 z-50 transition-all duration-500`}>
         <div className="flex flex-col justify-center items-center p-10">
           <Link 
             href="/" 
