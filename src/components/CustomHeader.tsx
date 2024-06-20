@@ -1,6 +1,26 @@
+'use client'
+
 import Image from "next/image"
 import Link from "next/link"
-import React from "react"
+import React, { useState } from "react"
+import './CustomHeader.css'
+
+function HamburgerButton() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <>
+      <div
+        className={"burgerbtn " + (isOpen ? "active" : "")}
+        onClick={() => { setIsOpen(!isOpen) }}
+      >
+        <span />
+        <span />
+        <span />
+      </div>
+    </>
+  );
+}
 
 function HeaderButton({ href, children }: { href: string, children: React.ReactNode }) {
   return (
@@ -13,6 +33,8 @@ function HeaderButton({ href, children }: { href: string, children: React.ReactN
 }
 
 export default function CustomHeader() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className="flex justify-between w-full h-16 md:h-18 lg:h-20 border-b border-color border-opacity-100 bg-lime-100 fixed top-0 left-0 z-50">
       <Link href="/" className="flex items-center h-full">
@@ -29,6 +51,18 @@ export default function CustomHeader() {
         <HeaderButton href="/aboutme">About me</HeaderButton>
         <HeaderButton href="/works">Works</HeaderButton>
         <HeaderButton href="/blog">Blog</HeaderButton>
+      </div>
+      <div className="flex md:hidden">
+        <div className="w-full aspect-square flex justify-center items-center">
+          <div
+            className={"burgerbtn " + (isOpen ? "active" : "")}
+            onClick={() => { setIsOpen(!isOpen) }}
+          >
+            <span />
+            <span />
+            <span />
+          </div>
+        </div>
       </div>
     </div>
   );

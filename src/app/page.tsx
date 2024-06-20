@@ -28,12 +28,6 @@ export default function Home() {
     <>
       <main>
         <div className="fixed w-full h-full top-main-container -z-50" />
-        {/* <div className="pt-16 w-full h-full flex justify-center items-center bg-lime-100 bg-opacity-65 -z-10">
-          <div className="flex-row text-xl md:text-4xl lg:text-6xl">
-            <TypingSentence text="everyday, enjoy." duration={100} />
-            <TypingSentence text="everyday, make_unique." duration={100} delay={2000} />
-          </div>
-        </div> */}
         <ContentsContainer
           id=""
           className="bg-lime-100 bg-opacity-65"
@@ -41,7 +35,7 @@ export default function Home() {
           <div className="flex justify-center items-center">
             <div className="flex flex-col text-xl md:text-4xl lg:text-6xl">
               <TypingSentence text="everyday, enjoy." duration={100} />
-              <TypingSentence text="everyday, make_unique." duration={100} delay={2000} />
+              <TypingSentence text="everyday, make_unique;" duration={100} delay={2000} />
             </div>
           </div>
         </ContentsContainer>
@@ -153,7 +147,7 @@ export default function Home() {
                   この度はサイトをご覧いただきありがとうございました。
                   このサイトを通じて私のことが少しでも伝わっていましたら幸いです。
                   もし私へのご連絡などありましたら、以下のフォームをご利用ください。
-                  <br/>
+                  <br />
                   <span className="text-red-500">※現在は機能していません。</span>
                 </p>
               </div>
@@ -178,9 +172,9 @@ export default function Home() {
                     isTextarea={true}
                   />
                 </div>
-                <div className="col-span-3" />
+                <div className="col-span-2 md:col-span-3" />
                 <AroundButton
-                  className="col-span-2 border border-gray-400"
+                  className="col-span-4 md:col-span-2 border border-gray-400"
                   onClick={() => { console.log('click') }}
                 >
                   Send
