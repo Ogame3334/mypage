@@ -8,7 +8,7 @@ import './CustomHeader.css'
 function HeaderButton({ href, children }: { href: string, children: React.ReactNode }) {
   return (
     <div className="flex items-center justify-center px-4 h-full bg-lime-300 bg-opacity-0 hover:bg-opacity-40 transition">
-      <Link href={href} className="flex items-center h-full text-3xl md:text-2xl lg:text-3xl">
+      <Link href={href} className="flex items-center h-full text-3xl md:text-2xl lg:text-3xl text-lime-900">
         {children}
       </Link>
     </div>
@@ -20,7 +20,7 @@ export default function CustomHeader() {
 
   return (
     <>
-      <div className="flex justify-between w-full h-16 md:h-18 lg:h-20 border-b border-color border-opacity-100 bg-lime-100 fixed top-0 left-0 z-50">
+      <div className="flex justify-between w-full h-16 md:h-18 border-b border-color border-opacity-100 bg-lime-100 fixed top-0 left-0 z-50">
         <Link href="/" className="flex items-center h-full">
           <Image
             src="/ogame.png"
@@ -56,28 +56,28 @@ export default function CustomHeader() {
             className="flex items-center h-full text-3xl md:text-2xl lg:text-3xl py-8"
             onClick={()=>{setIsOpen(false);}}
           >
-            <div className="p-2 border-b border-black">Top</div>
+            <div className="p-2 border-b border-black text-lime-900">Top</div>
           </Link>
           <Link 
             href="/aboutme" 
             className="flex items-center h-full text-3xl md:text-2xl lg:text-3xl py-8"
             onClick={()=>{setIsOpen(false);}}
           >
-            <div className="p-2 border-b border-black">About me</div>
+            <div className="p-2 border-b border-black text-lime-900">About me</div>
           </Link>
           <Link 
             href="/works" 
             className="flex items-center h-full text-3xl md:text-2xl lg:text-3xl py-8"
             onClick={()=>{setIsOpen(false);}}
           >
-            <div className="p-2 border-b border-black">Works</div>
+            <div className="p-2 border-b border-black text-lime-900">Works</div>
           </Link>
           <Link 
             href="/blog" 
             className="flex items-center h-full text-3xl md:text-2xl lg:text-3xl py-8"
             onClick={()=>{setIsOpen(false);}}
           >
-            <div className="p-2 border-b border-black">Blog</div>
+            <div className="p-2 border-b border-black text-lime-900">Blog</div>
           </Link>
         </div>
       </div>

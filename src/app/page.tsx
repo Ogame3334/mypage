@@ -59,7 +59,7 @@ export default function Home() {
                   style={{ width: '100%', height: 'auto' }}
                 />
               </div>
-              <div className="break-words w-3/4 md:w-1/2 lg:w-1/4 rounded-lg border border-pink-300 p-5 bg-white text-[12px] md:text-base">
+              <div className="break-words w-3/4 md:w-2/3 lg:w-1/2 rounded-lg border border-pink-300 p-10 bg-white text-[12px] md:text-base">
                 <table>
                   <tbody>
                     <tr>

@@ -2,6 +2,8 @@
   position: relative;
   width: 80%;
   margin: 40px 3%;
+  background-color: rgba(238, 249, 212, 0.4);
+
 }
 .cp_iptxt input[type='text'],
 .cp_iptxt textarea {
