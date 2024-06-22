@@ -8,7 +8,7 @@ import './CustomHeader.css'
 function HeaderButton({ href, children }: { href: string, children: React.ReactNode }) {
   return (
     <div className="flex items-center justify-center px-4 h-full bg-lime-300 bg-opacity-0 hover:bg-opacity-40 transition">
-      <Link href={href} className="flex items-center h-full text-3xl md:text-2xl lg:text-3xl text-lime-900">
+      <Link href={href} className="flex items-center h-full text-xl lg:text-2xl text-lime-900">
         {children}
       </Link>
     </div>
@@ -30,11 +30,14 @@ export default function CustomHeader() {
             style={{ width: 'auto', height: '100%' }}
           />
         </Link>
+        <div className="grid grid-cols-1">
+        <div className="col-span-1" />
         <div className="hidden md:flex">
           <HeaderButton href="/">Top</HeaderButton>
           <HeaderButton href="/aboutme">About me</HeaderButton>
           <HeaderButton href="/works">Works</HeaderButton>
           <HeaderButton href="/blog">Blog</HeaderButton>
+        </div>
         </div>
         <div className="flex md:hidden">
           <div className="w-full aspect-square flex justify-center items-center">
