@@ -7,7 +7,7 @@ const workInfo: WorkPanelInfo = {
   title: "面白い作品！！！",
   thumbnail: "/tuba.png",
   tags: ["game"],
-  created_at: new Date(),
+  created_at: new Date().getTime(),
   work_id: 'asoidjgldkcvnlzosruigh'
 }
 

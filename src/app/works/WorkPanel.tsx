@@ -17,7 +17,7 @@ export default function WorkPanel({ workInfo }: { workInfo: WorkPanelInfo }) {
             style={{ width: '240px', height: '135px', objectFit: 'cover' }}
           />
           <div className="text-center p-3">{workInfo.title}</div>
-          <div className="text-right text-xs">{workInfo.created_at.toLocaleDateString('ja-JP')}</div>
+          <div className="text-right text-xs">{new Date(workInfo.created_at).toLocaleDateString('ja-JP')}</div>
         </div>
       </Link>
     </>
