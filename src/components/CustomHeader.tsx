@@ -20,7 +20,7 @@ export default function CustomHeader() {
 
   return (
     <>
-      <div className="flex justify-between w-full h-16 md:h-18 border- border-color border-opacity-100 bg-lime-100 fixed top-0 left-0 z-50 shadow-lg">
+      <div className="flex justify-between w-full h-16 md:h-18 bg-lime-100 fixed top-0 left-0 z-50 shadow-lg">
         <Link href="/" className="flex items-center h-full">
           <Image
             src="/ogame.png"

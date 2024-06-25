@@ -1,13 +1,13 @@
 'use client'
 
 import WorkPanel from "./WorkPanel";
-import WorkInfo from "./WorkInfo";
+import WorkPanelInfo from "./WorkPanelInfo";
 
-const workInfo: WorkInfo = {
+const workInfo: WorkPanelInfo = {
   title: "面白い作品！！！",
   thumbnail: "/tuba.png",
   tags: ["game"],
-  datetime: new Date(),
+  created_at: new Date(),
   work_id: 'asoidjgldkcvnlzosruigh'
 }
 
