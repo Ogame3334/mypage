@@ -11,9 +11,19 @@ export async function POST(request: NextRequest) {
     const body = await request.text();
 
     // bodyの内容をlogs.txtに追記
-    let html = `<div style=\"border: 1px solid black; padding: 10px; margin: 10px;\">${body.replaceAll('\n', '<br>')}</div>`
+    let html = `<div style=\"border: 1px solid black; padding: 10px; margin: 10px;\">${new Date().toLocaleDateString('ja-JP')} ${new Date().toLocaleTimeString('ja-JP')}<br>${body.replaceAll('\n', '<br>')}</div>`
     await fs.appendFile(logFilePath, html + '\n');
 
+    await fetch(process.env.DISCORD_WEBHOOK_EXPERIMENT_URL || '', {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        content: body
+      })
+    });
+    
     return NextResponse.json({ message: 'Log saved successfully' });
   } catch (error) {
     console.error('Error saving log:', error);
