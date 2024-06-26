@@ -1,0 +1,22 @@
+.markdown-box h1 {
+    @apply text-4xl font-bold my-5 border-b border-gray-300;
+}
+.markdown-box h2 {
+    @apply text-3xl font-bold my-5 border-b border-gray-300;
+}
+.markdown-box h3 {
+    @apply text-2xl font-bold my-3;
+}
+.markdown-box p {
+    @apply my-2;
+}
+
+.markdown-box code {
+    @apply p-1 bg-gray-50
+}
+.markdown-box pre {
+    @apply my-5 p-4 bg-gray-50 rounded-xl overflow-scroll overflow-y-hidden
+}
+.markdown-box pre code {
+
+}
