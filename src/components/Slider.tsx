@@ -39,14 +39,15 @@ export default function Slider(props: SliderProp) {
       >
         {props.assets_path.map((elem: string, index: number) => (
           <SwiperSlide key={index}>
-            <div className="w-96">
+            <div className="w-auto">
               {(elem.split('.').pop() == 'mp4')
                 ?
                 <video
                   src={elem}
                   controls={true}
-                  width={'auto'}
-                  height={'auto'}
+                  width={'100%'}
+                  height={'100%'}
+                  style={{objectFit: 'contain'}}
                 />
                 :
                 <Image
