@@ -35,3 +35,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 public/logs.html
+.env
+init.sql
+backup.sql
+schema.sql

@@ -7,4 +7,24 @@ services:
     volumes:
       - .:/root/product
     ports:
-    - "49152:3000"
+      - "3000:3000"
+    networks:
+      - app-net
+  db:
+    image: postgres
+    container_name: mypage_database
+    volumes:
+      - ./postgres/initdb:/docker-entrypoint-initdb.d
+      - dbdata:/var/lib/postgresql/data
+    env_file:
+      - ./.env
+    networks:
+      - app-net
+
+networks:
+  app-net:
+    name: mypage_app_net
+    driver: bridge
+
+volumes:
+  dbdata: null
