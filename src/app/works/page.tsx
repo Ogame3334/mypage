@@ -16,19 +16,19 @@ const workInfo: WorkInfo = {
 export default function Main() {
   const [works, setWorks] = useState<WorkInfo[]>([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      return await fetch("/api/works", { method: "GET" });
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     return await fetch("/api/works", { method: "GET" });
+  //   };
 
-    const data = fetchData();
+  //   const data = fetchData();
 
-    data.then(async (res) => {
-      const works = (await res.json()) as WorkInfo[];
+  //   data.then(async (res) => {
+  //     const works = (await res.json()) as WorkInfo[];
 
-      setWorks(works);
-    });
-  }, []);
+  //     setWorks(works);
+  //   });
+  // }, []);
   return (
     <>
       <main className=" bg-red-50 h-auto min-h-full">

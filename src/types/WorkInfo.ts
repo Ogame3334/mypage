@@ -18,4 +18,12 @@ interface WorkInfo {
   detail?: string;
 }
 
-export type { WorkInfo, WorkInfoDB };
+interface WorkInfoNew {
+  title: string;
+  thumbnail: string;
+  assets: string[];
+  tags: string[];
+  detail: string;
+}
+
+export type { WorkInfo, WorkInfoDB, WorkInfoNew };

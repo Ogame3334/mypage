@@ -4,7 +4,7 @@ import { sqlRequst } from "@/lib/db";
 import { NextApiRequest, NextApiResponse } from "next";
 import { NextRequest, NextResponse } from "next/server";
 import fs from "fs";
-import { WorkInfo, WorkInfoDB } from "@/types/WorkInfo";
+import { WorkInfo, WorkInfoDB, WorkInfoNew } from "@/types/WorkInfo";
 
 const listFiles = (dirPath: string) => {
   const files: string[] = [];
@@ -34,7 +34,7 @@ const listFiles = (dirPath: string) => {
   return files;
 };
 
-export async function GET(request: Request) {
+export async function GET(req: Request) {
   {
     const result = await sqlRequst("SELECT * FROM works_tag;");
     if (!result) return NextResponse.json({ error: "Database error" });
@@ -72,4 +72,10 @@ export async function GET(request: Request) {
       return NextResponse.json(works);
     }
   }
+}
+
+export async function POST(req: Request) {
+  const body = await req.json();
+  const workInfoNew: WorkInfoNew = body.work;
+  console.log(workInfoNew);
 }

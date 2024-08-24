@@ -26,11 +26,12 @@ export default function ManageLayout({
 }>) {
   return (
     <>
-      <div className="fixed top-16 left-0 w-full h-10 bg-purple-100 shadow-lg flex justify-between">
+      <div className="fixed top-16 left-0 w-full h-10 bg-purple-100 shadow-lg flex justify-between z-40">
         <div className="text-xl p-2">ManageMode</div>
         <div className="flex">
           <HeaderButton href="/manage/works">Works</HeaderButton>
           <HeaderButton href="/manage/blog">Blog</HeaderButton>
+          <HeaderButton href="/manage/settings">Setting</HeaderButton>
         </div>
       </div>
       {children}

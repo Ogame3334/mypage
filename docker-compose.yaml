@@ -14,7 +14,6 @@ services:
     image: postgres
     container_name: mypage_database
     volumes:
-      - ./postgres/initdb:/docker-entrypoint-initdb.d
       - dbdata:/var/lib/postgresql/data
     env_file:
       - ./.env

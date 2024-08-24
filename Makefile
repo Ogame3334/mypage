@@ -8,8 +8,8 @@ down:
 	docker compose down
 
 down-v:
-	docker compose down --volumes
 	docker compose exec db pg_dumpall -c -U ogame > archive.sql
+	docker compose down --volumes
 
 db_restore:
 	cat backup.sql | docker compose exec -T db psql -U ogame -d mypage
