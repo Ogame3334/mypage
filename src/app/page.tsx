@@ -7,6 +7,7 @@ import RoundedButton from "@/components/buttons/RoundedButton";
 import InputText from "@/components/inputs/InputText";
 import { ReactNode } from "react";
 import Image from "next/image";
+import hash16 from "@/lib/hash16";
 
 function ContentsContainer({ children, className, id }: { children: ReactNode, className: string, id: string }) {
   return (
