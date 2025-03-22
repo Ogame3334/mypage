@@ -1,0 +1,29 @@
+.header {
+  position: fixed;
+  width: 100vw;
+  height: 8vh; 
+  top: 0; 
+  background-color: var(--ogm-green);
+  z-index: 10;
+  box-shadow: #1203 0px 1px 5px;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: right;
+    align-items: end;
+    height: 100%;
+    padding: 0 30px;
+}
+
+.button {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    transition: .3s;
+}
+
+.button:hover {
+    background-color: #0001;
+}
