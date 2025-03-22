@@ -23,12 +23,24 @@ export default function Home() {
         <div className={styles.panelHeading}>
           About me
         </div>
-        <Image
-          alt="icon"
-          src="/ogame_trans.png"
-          width={200}
-          height={200}
-        />
+        <div className={styles.aboutmeContainer}>
+          <Image
+            alt="icon"
+            src="/ogame_trans.png"
+            width={200}
+            height={200}
+          />
+          <div 
+            className={styles.aboutmeCard}
+            style={{outlineColor: "var(--ogm-red)"}}
+          >
+            HN: 緑獺おがめ<br/>
+            所属: 九州工業大学 情報工学部 学部3年<br/>
+            <br/>
+            大学に入ってからWebフロント、バック、ゲーム開発、作曲、3DCG、小説執筆など幅広い創作活動をしてきました。<br/>
+            現在はC++を主軸としながら、ゲーム開発やWebアプリ開発をしています。
+          </div>
+        </div>
         <div>
 
         </div>
@@ -37,7 +49,7 @@ export default function Home() {
           onClick={()=>{router.push("aboutme")}}
         />
       </div>
-      <div id="works" className={styles.panel} style={{ backgroundColor: "var(--ogm-blue)" }}>
+      <div id="works" className={styles.panel} style={{ backgroundColor: "var(--ogm-red)" }}>
         <div className={styles.panelHeading}>
           Works
         </div>
@@ -49,7 +61,7 @@ export default function Home() {
           onClick={()=>{router.push("works")}}
         />
       </div>
-      <div id="blog" className={styles.panel} style={{ backgroundColor: "var(--ogm-red)" }}>
+      <div id="blog" className={styles.panel} style={{ backgroundColor: "var(--ogm-blue)" }}>
         <div className={styles.panelHeading}>
           Blog
         </div>

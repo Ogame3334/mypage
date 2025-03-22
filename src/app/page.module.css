@@ -15,12 +15,27 @@
   text-align: center;
   padding: 20px;
 }
+
+.aboutmeContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  padding: 20px;
+}
+.aboutmeCard {
+  padding: 30px;
+  background-color: white;
+  outline: solid 1px;
+  border-radius: 30px;
+}
+
 @media (max-width: 768px) {
   .header {
     position: fixed;
     width: 100vw;
     height: 8vh;  
-    background-color: #aaa;
   }
   .panelHeading {
     font-size: 30px;
@@ -32,11 +47,15 @@
     position: fixed;
     width: 100vw;
     height: 8vh;  
-    background-color: #a00;
   }
   .panelHeading {
     font-size: 35px;
     text-align: center;
   }
-  
+  .aboutmeContainer {
+    flex-direction: column;
+  }
+.aboutmeCard {
+  font-size: 14px;
+}
 }
