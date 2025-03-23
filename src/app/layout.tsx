@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto_Mono } from "next/font/google";
 import "./globals.css";
+import { Header } from "@/components/Header/Header";
 
 const robotoMono = Roboto_Mono({
   weight: "400",
@@ -19,8 +20,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="jp">
       <body className={`${robotoMono.className}`}>
+        <Header />
         {children}
       </body>
     </html>

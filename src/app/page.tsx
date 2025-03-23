@@ -3,7 +3,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import "./globals.css"
-import { Header } from "@/components/Header/Header";
 import { RoundButton } from "@/components/Buttons/RoundButton";
 import { useRouter } from "next/navigation";
 
@@ -12,7 +11,6 @@ export default function Home() {
   
   return (
     <div>
-      <Header />
       <div id="top" className={styles.panel} style={{ backgroundColor: "var(--ogm-green)" }}>
         <div className={styles.panelHeading} style={{textAlign: "left"}}>
           Everyday, enjoy. <br/>
