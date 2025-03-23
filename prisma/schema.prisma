@@ -1,0 +1,60 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model BlobObject {
+  id   Int    @id @default(autoincrement())
+  link String
+
+  workId Int
+  work   Work @relation(fields: [workId], references: [id], onDelete: Cascade)
+}
+
+model MarkdownObject {
+  id   Int    @id @default(autoincrement())
+  link String
+
+  workId Int  @unique
+  work   Work @relation(fields: [workId], references: [id], onDelete: Cascade)
+}
+
+model Tag {
+  id   Int    @id @default(autoincrement())
+  name String @unique 
+
+  works WorkTag[]
+}
+
+model Work {
+  id       Int             @id @default(autoincrement())
+  hashId   String          @unique
+  title    String
+  blobs    BlobObject[]
+  detail   MarkdownObject?
+  tags     WorkTag[]
+  isPublic Boolean         @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model WorkTag {
+  workId Int
+  tagId  Int
+  work   Work @relation(fields: [workId], references: [id], onDelete: Cascade)
+  tag    Tag  @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([workId, tagId])
+}
