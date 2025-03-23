@@ -2,7 +2,7 @@ import { wasabiAccessor } from "@/utils/WasabiAccessor";
 import { NextResponse } from "next/server";
 
 
-export async function GET(req: Request, {params}: {params: {fileName: string}}){
+export async function GET(req: Request, {params}: {params: Promise<{fileName: string}>}){
     const {fileName} = await params;
     console.log(fileName);
     const result = await wasabiAccessor.download(`blobs/${fileName}`);
