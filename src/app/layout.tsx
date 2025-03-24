@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header/Header";
+import { ParallaxProviderWrapper } from "@/components/ParallaxProviderWrapper";
 
 const robotoMono = Roboto_Mono({
   weight: "400",
@@ -22,8 +23,10 @@ export default function RootLayout({
   return (
     <html lang="jp">
       <body className={`${robotoMono.className}`}>
-        <Header />
-        {children}
+        <ParallaxProviderWrapper>
+          <Header />
+          {children}
+        </ParallaxProviderWrapper>
       </body>
     </html>
   );
