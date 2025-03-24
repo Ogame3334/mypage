@@ -19,8 +19,8 @@ model BlobObject {
   filePath String
   mimeType  String
 
-  workId Int
-  work   Work @relation(fields: [workId], references: [id], onDelete: Cascade)
+  workId Int?
+  work   Work? @relation(fields: [workId], references: [id], onDelete: Cascade)
 }
 
 model MarkdownObject {
