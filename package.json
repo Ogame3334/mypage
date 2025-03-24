@@ -11,11 +11,19 @@
   "dependencies": {
     "@aws-sdk/client-s3": "^3.772.0",
     "@prisma/client": "^6.5.0",
+    "easymde": "^2.20.0",
+    "github-markdown-css": "^5.8.1",
+    "marked": "^15.0.7",
+    "nanoid": "^5.1.5",
     "next": "15.1.6",
     "next-auth": "^4.24.11",
     "prisma": "^6.5.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-markdown": "^10.1.0",
+    "react-simplemde-editor": "^5.2.0",
+    "remark-breaks": "^4.0.0",
+    "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

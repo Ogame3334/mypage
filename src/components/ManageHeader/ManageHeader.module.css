@@ -1,11 +1,11 @@
 .header {
   position: fixed;
   width: 100vw;
-  height: 8vh; 
+  height: 12vh; 
   top: 0; 
-  background-color: var(--ogm-green);
-  z-index: 10;
-  box-shadow: #1203 0px 1px 5px;
+  background-color: var(--ogm-purple);
+  z-index: 9;
+  box-shadow: rgba(24, 0, 34, 0.2) 0px 1px 5px;
 }
 
 .buttonContainer {

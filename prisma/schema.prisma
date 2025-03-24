@@ -27,8 +27,8 @@ model MarkdownObject {
   id   Int    @id @default(autoincrement())
   filePath String
 
-  workId Int  @unique
-  work   Work @relation(fields: [workId], references: [id], onDelete: Cascade)
+  workId Int?  @unique
+  work   Work? @relation(fields: [workId], references: [id], onDelete: Cascade)
 }
 
 model Tag {
@@ -40,7 +40,7 @@ model Tag {
 
 model Work {
   id       Int             @id @default(autoincrement())
-  hashId   String          @unique
+  nanoId   String          @unique
   title    String
   blobs    BlobObject[]
   detail   MarkdownObject?

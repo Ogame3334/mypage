@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.worksContainer {
+    width: 80vw;
+    height: 50vh;
+    overflow: scroll;
+    
+}
