@@ -1,0 +1,42 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.heading {
+    font-size: 50px;
+}
+
+.worksContainer {
+    margin: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.worksCard {
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    user-select: none;
+    border-radius: 10px;
+    outline: solid 1px rgb(255, 199, 199);
+    transition: .3s;
+}
+
+.worksCard:hover {
+    transform: scale(1.05);
+}
+.worksCard:active {
+    transform: translateY(10);
+}
+
+.worksCardImage {
+    width: 100%;
+    object-fit: contain;
+}

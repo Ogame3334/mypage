@@ -1,11 +1,20 @@
 import { InputDtoWorksToCreate } from "@/dto/works/InputDtoWorksToCreate";
 import { prisma } from "@/utils/PrismaClient";
-import { Work } from "@prisma/client";
 import { nanoid } from "nanoid";
 import { NextResponse } from "next/server";
 
 export async function GET(){
-    const works = await prisma.work.findMany() as Work[];
+    const works = await prisma.work.findMany({
+        include: {
+            blobs: true,
+            detail: true,
+            tags: {
+                include: {
+                    tag: true
+                }
+            },
+        }
+    });
 
     return NextResponse.json({works: works});
 }
