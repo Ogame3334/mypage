@@ -1,6 +1,9 @@
 interface InputDtoWorksToCreate {
     title: string;
-    blobIds: number[];
+    blobs: {
+        filePath: string;
+        mimeType: string;
+    }[];
     isPublic: boolean;
     tagIds: number[];
     markdownId: number;

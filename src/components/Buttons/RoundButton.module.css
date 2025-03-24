@@ -9,9 +9,14 @@
   border-radius: 9999px;
   overflow: hidden;
   transition: 0.3s;
+  user-select: none;
 }
 
 .button:hover{
     background-color: white;
     transform: scale(1.01);
+}
+
+.button:active {
+  transform: translateY(10);
 }

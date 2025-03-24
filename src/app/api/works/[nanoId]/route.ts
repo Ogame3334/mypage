@@ -1,8 +1,11 @@
+import { OutputWorkDtoFull } from "@/dto/works/OutputWorkDtoFull";
 import { OutputWorkDtoOpened } from "@/dto/works/OutputWorkDtoOpened";
 import { prisma } from "@/utils/PrismaClient";
 import { NextResponse } from "next/server";
 
 export async function GET(req: Request, {params}: {params: Promise<{nanoId: string}>}){
+    const url = new URL(req.url);
+    const isFull = url.searchParams.get("full") != null ? true : false;
     const {nanoId} = await params;
     
     const work = await prisma.work.findFirst({
@@ -29,19 +32,30 @@ export async function GET(req: Request, {params}: {params: Promise<{nanoId: stri
                                 .then(ab => Buffer.from(ab).toString())
                             );
 
-    console.log(detailText);
+                            console.log("work: ", work);
 
-    const outDtoWork: OutputWorkDtoOpened = {
-        id: work.id,
-        nanoId: work.nanoId,
-        title: work.title,
-        isPublic: work.isPublic,
-        blobs: work.blobs.map(blob => `/api/contents/${blob.filePath}`),
-        detail: detailText,
-        tags: [],
-        createdAt: work.createdAt,
-        updatedAt: work.updatedAt
+    if(isFull){
+        const outDtoWorkFull: OutputWorkDtoFull = {
+            ...work,
+            detail: work.detail!,
+            detailContext: detailText
+        };
+    
+        return NextResponse.json({...outDtoWorkFull});
     }
- 
-    return NextResponse.json({outDtoWork});
+    else{
+        const outDtoWork: OutputWorkDtoOpened = {
+            id: work.id,
+            nanoId: work.nanoId,
+            title: work.title,
+            isPublic: work.isPublic,
+            blobs: work.blobs.map(blob => `/api/contents/${blob.filePath}`),
+            detail: detailText,
+            tags: [],
+            createdAt: work.createdAt,
+            updatedAt: work.updatedAt
+        }
+    
+        return NextResponse.json({...outDtoWork});
+    }
 }

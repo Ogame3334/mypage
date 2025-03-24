@@ -20,7 +20,9 @@ export async function POST(req: Request){
             isPublic: inputDto.isPublic,
             nanoId: nanoid(),
             blobs: {
-                connect: inputDto.blobIds.map(id => ({id})),
+                createMany: {
+                    data: inputDto.blobs
+                }
             },
             detail: {
                 connect: {id: inputDto.markdownId}

@@ -9,7 +9,7 @@ function ManageHeader(){
         {Object.entries(Categories).map((c, i) => (
           <Link 
             key={i} 
-            href={c[1].id == "top" ? "" : c[1].id}
+            href={c[1].id == "top" ? "/manage" : `/manage/${c[1].id}`}
             className={styles.button}
           >
             {c[1].name}
