@@ -3,6 +3,7 @@ const Categories = {
         id: "top",
         name: "Top"
     },
+    /*
     aboutme: {
         id: "aboutme",
         name: "About me"
@@ -15,6 +16,7 @@ const Categories = {
         id: "blog",
         name: "Blog"
     }
+    */
 }
 
 export {Categories}

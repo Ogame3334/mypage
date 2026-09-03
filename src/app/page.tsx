@@ -11,8 +11,8 @@ export default function Home() {
   
   return (
     <div>
-      <div id="top" className={styles.panel} style={{ backgroundColor: "var(--ogm-green)" }}>
-        <div className={styles.panelHeading} style={{textAlign: "left"}}>
+      <div id="top" className={styles.topContainer} style={{ backgroundColor: "var(--ogm-green)" }}>
+        <div className={styles.panelHeading} style={{textAlign: "left", color: "white"}}>
           Everyday, enjoy. <br/>
           Everyday, make_unique;
         </div>
@@ -42,11 +42,14 @@ export default function Home() {
         <div>
 
         </div>
+        {/*
         <RoundButton 
           label="View the details"
           onClick={()=>{router.push("aboutme")}}
         />
+      */}
       </div>
+      {/*
       <div id="works" className={styles.panel} style={{ backgroundColor: "var(--ogm-red)" }}>
         <div className={styles.panelHeading}>
           Works
@@ -71,12 +74,31 @@ export default function Home() {
           onClick={()=>{router.push("blog")}}
         />
       </div>
+      */}
       <div id="contactme" className={styles.panel} style={{ backgroundColor: "var(--ogm-white)" }}>
         <div className={styles.panelHeading}>
           Contact me
         </div>
-        <div>
-
+        <div className={styles.contactmeIcons}>
+          <a href="https://x.com/MidorikawaOgame" className={styles.contactmeIcon}>
+              <Image
+                alt="icon"
+                src="/x-logo-black.png"
+                width={40}
+                height={40}
+                className="m-5"
+              />
+          </a>
+          <a href="https://github.com/Ogame3334" className={styles.contactmeIcon}>
+              <Image
+                alt="icon"
+                src="/github.png"
+                width={40}
+                height={40}
+                className="m-5"
+              />
+          </a>
+          {/* Contact content placeholder */}
         </div>
       </div>
     </div>

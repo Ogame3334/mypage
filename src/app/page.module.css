@@ -16,6 +16,16 @@
   padding: 20px;
 }
 
+.topContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/bg-cpp-code.png");
+}
+
 .aboutmeContainer {
   display: flex;
   flex-direction: row;
@@ -29,6 +39,14 @@
   background-color: white;
   outline: solid 1px;
   border-radius: 30px;
+}
+
+.contactmeIcons {
+  display: flex;
+  margin: 20px;
+}
+.contactmeIcon {
+  margin: 20px;
 }
 
 @media (max-width: 768px) {
