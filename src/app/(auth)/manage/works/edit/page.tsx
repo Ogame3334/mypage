@@ -75,7 +75,7 @@ function HomeContent() {
       fetchWork(nanoId);
     }
 
-  }, []);
+  }, [searchParams]);
 
   useEffect(()=> {
     console.log(workEdit);
